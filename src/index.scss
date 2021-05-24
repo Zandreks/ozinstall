@@ -1,0 +1,76 @@
+@import "Styles/CenturyGothic/stylesheet";
+@import "Styles/Tahoma/stylesheet";
+@import "Styles/Arial/stylesheet";
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #bfbebf;
+  color: #d3d3d3;
+  font-family: 'Century Gothic', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container-fluid{
+  max-width: 1015px;
+  padding-top: 60px;
+  background: #ffffff;
+  overflow: hidden;
+  margin-bottom: 45px;
+}
+.content-box{
+  margin-left: 43px;
+  margin-right: 43px;
+}
+@media (max-width: 600px) {
+  .content-box{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.ant-input-focused, .ant-input:focus{
+  border-color: #838383;
+  box-shadow: none;
+}
+.slick-prev, .slick-next{
+  top:40%;
+}
+.slick-prev{
+  //left:-10px;
+  z-index: 9;
+}
+.slick-prev:before, .slick-next:before{
+  display: none;
+}
+.slick-next{
+  //right:-10px;
+  z-index: 9;
+}
+
+.ant-input:hover{
+  border-color: #838383;
+  box-shadow: none;
+}
+@media (max-width: 600px) {
+  .slick-prev{
+    left:-15px;
+    z-index: 9;
+  }
+  .slick-next{
+    right:-15px;
+    z-index: 9;
+  }
+}
+//.ant-card-meta-title{
+//  white-space: normal;
+//}
+@import "Styles/Header";
+@import "Styles/HomePage";
+@import "Styles/Servise-item";
+@import "Styles/Credentials";
+@import "Styles/Footer";
+@import "Styles/Partner";
+@import "Styles/AboutPage";
+@import "Styles/Admin";

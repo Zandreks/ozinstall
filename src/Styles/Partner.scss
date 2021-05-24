@@ -1,0 +1,28 @@
+.partner{
+  .title{
+    font-size: 24px;
+    color:#616161 ;
+    padding-top: 20px;
+    border-top: 2px #eeeeee dashed;
+    border-bottom: 2px #eeeeee dashed;
+    font-style: normal;
+    letter-spacing: 5px;
+    padding-bottom: 20px;
+  }
+  .partners-carusel{
+    margin-top: 34px;
+    .arrowImg{
+      top:5px
+    }
+    .slick-track{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .carusel-img-item{
+    display: block;
+    margin: 0 auto;
+    max-height: 160px;
+  }
+}

@@ -1,0 +1,69 @@
+footer{
+  margin-top: 34px;
+  border-top: 2px #979797 solid;
+  .title{
+    font-size: 19px;
+    font-style: normal;
+    color: #616161;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 34px;
+    margin-bottom: 34px;
+  }
+  .navigation-footer{
+    .menu-item{
+      a{
+        font-size: 12px;
+        color: #646465;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-style: normal;
+      }
+      a:hover{
+        font-weight: bold;
+        color: #2a292c;
+        text-decoration: none;
+      }
+    }
+  }
+  .description{
+    font-size: 12px;
+    color: #646465;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-style: normal;
+    a{
+      font-size: 12px;
+      color: #646465;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-style: normal;
+    }
+  }
+  .social-icon{
+    display: flex;
+    .social-item{
+      margin-right: 14px;
+    }
+  }
+  .box-footer-logo{
+    margin-top: 34px;
+    padding-bottom: 34px;
+    padding-top: 34px;
+    border-top: 2px #eeeeee dashed;
+    .main-logo {
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+      .copy{
+        text-align: center;
+        font-style: normal;
+        font-size: 14px;
+        color: #9f9f9f;
+        letter-spacing: 2px;
+
+      }
+    }
+  }
+}

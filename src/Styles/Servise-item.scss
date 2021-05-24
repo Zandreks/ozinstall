@@ -1,0 +1,17 @@
+.servise-item{
+  .img-prev{
+    margin-top: 15px;
+    img{
+      height: 202px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .description{
+    font-family: Tahoma,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #838383;
+    margin-top: 10px;
+  }
+}
