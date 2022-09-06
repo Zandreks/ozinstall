@@ -72,18 +72,23 @@ let responseTamplase = async (url,metod, json)=>{
                 return res.data.data
             }else {
                 message.error(res.data.message)
-
                 if(res.data.autch === false){
                     localStorage.clear()
                 }
             }
         }
     }catch (error) {
-        message.error(error.response.data.message)
+        if (error.response.data.message){
+            message.error(error.response.data.message)
+            if(error.response.data.autch === false){
+                localStorage.clear()
+            }
+        }else {
+            return await responseTamplase(url,metod,json)
 
-        if(error.response.data.autch === false){
-            localStorage.clear()
         }
+
+
     }
 
 }

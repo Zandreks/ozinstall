@@ -25,57 +25,60 @@ let Header = ({isOpen,setIsOpen}) => {
     let [data,setData] = useState([])
     let getData = async ()=>{
         let res = await responseTamplase("/api/rest/sosioallink/getObject",'get')
-        let dataArr = []
-        for (let val of res){
-            if (val.TypeLink ==="facebook"&& val.Show =="true" ){
-                dataArr.push({
-                    url:val.Link,
-                    img:facebook,
-                    alt:"facebook"
-                })
-            }
-            if (val.TypeLink ==="twitter"&& val.Show =="true" ){
-                dataArr.push({
-                    url:val.Link,
-                    img:twitter,
-                    alt:"twitter"
+        if (!!res){
+            let dataArr = []
+            for (let val of res){
+                if (val.TypeLink ==="facebook"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:val.Link,
+                        img:facebook,
+                        alt:"facebook"
+                    })
+                }
+                if (val.TypeLink ==="twitter"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:val.Link,
+                        img:twitter,
+                        alt:"twitter"
 
-                })
-            }
-            if (val.TypeLink ==="youtube"&& val.Show =="true" ){
-                dataArr.push({
-                    url:val.Link,
-                    img:youtube,
-                    alt:"youtube"
+                    })
+                }
+                if (val.TypeLink ==="youtube"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:val.Link,
+                        img:youtube,
+                        alt:"youtube"
 
-                })
-            }
-            if (val.TypeLink ==="email"&& val.Show =="true" ){
-                dataArr.push({
-                    url:`mailto:${val.Link}`,
-                    img:email,
-                    alt:"email"
+                    })
+                }
+                if (val.TypeLink ==="email"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:`mailto:${val.Link}`,
+                        img:email,
+                        alt:"email"
 
-                })
-            }
-            if (val.TypeLink ==="linkedin"&& val.Show =="true" ){
-                dataArr.push({
-                    url:val.Link,
-                    img:linkedin,
-                    alt:"linkedin"
+                    })
+                }
+                if (val.TypeLink ==="linkedin"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:val.Link,
+                        img:linkedin,
+                        alt:"linkedin"
 
-                })
-            }
-            if (val.TypeLink ==="instagram"&& val.Show =="true" ){
-                dataArr.push({
-                    url:val.Link,
-                    img:instagram,
-                    alt:"instagram"
+                    })
+                }
+                if (val.TypeLink ==="instagram"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:val.Link,
+                        img:instagram,
+                        alt:"instagram"
 
-                })
+                    })
+                }
             }
+            setData(dataArr)
         }
-        setData(dataArr)
+
     }
     useEffect(()=>{
         getData()

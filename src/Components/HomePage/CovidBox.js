@@ -5,7 +5,10 @@ let CovidBox =()=> {
     let [data,setData] = useState({})
     let getData = async ()=>{
         let res = await responseTamplase("/api/rest/covid/getObject/1",'get')
-        setData(res)
+        if (!!res){
+            setData(res)
+
+        }
     }
     useEffect(()=>{
         getData()

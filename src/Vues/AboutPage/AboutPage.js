@@ -10,17 +10,26 @@ let AboutPage = ()=>{
     let [data,setData] = useState({})
     let getData = async ()=>{
         let res = await responseTamplase("/api/rest/about/getObject/1",'get')
-        setData(res)
+        if (!!res){
+            setData(res)
+
+        }
     }
     let [dataCarusel,setDataCarusel] = useState([])
     let getDataCarusel = async ()=>{
         let res = await responseTamplase("/api/rest/aboutcarusel/getObject",'get')
-        setDataCarusel(res)
+        if (!!res){
+            setDataCarusel(res)
+
+        }
     }
     let [dataColum,setDataColum] = useState([])
     let getDataColum = async ()=>{
         let res = await responseTamplase("/api/rest/aboutcolum/getObject",'get')
-        setDataColum(res)
+        if (!!res){
+            setDataColum(res)
+
+        }
     }
     useEffect(()=>{
         getData()

@@ -5,7 +5,10 @@ let HelloBlok = ()=>{
     let [data,setData] = useState({})
     let getData = async ()=>{
         let res = await responseTamplase("/api/rest/home/getObject/1",'get')
-        setData(res)
+        if (!!res){
+            setData(res)
+
+        }
     }
     useEffect(()=>{
         getData()

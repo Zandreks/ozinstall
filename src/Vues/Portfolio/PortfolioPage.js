@@ -10,17 +10,26 @@ let PortfolioPage = ()=>{
     let [data,setData] = useState({})
     let getData = async ()=>{
         let res = await responseTamplase("/api/rest/portfolio/getObject/1",'get')
-        setData(res)
+        if (!!res){
+            setData(res)
+
+        }
     }
     let [dataCarusel,setDataCarusel] = useState([])
     let getDataCarusel = async ()=>{
         let res = await responseTamplase("/api/rest/portfoliocarusel/getObject",'get')
-        setDataCarusel(res)
+        if (!!res){
+            setDataCarusel(res)
+
+        }
     }
     let [dataVideo,setDataVideo] = useState([])
     let getDataVideo = async ()=>{
         let res = await responseTamplase("/api/rest/portfoliovideo/getObject",'get')
-        setDataVideo(res)
+        if (!!res){
+            setDataVideo(res)
+
+        }
     }
     useEffect(()=>{
         getData()

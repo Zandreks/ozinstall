@@ -8,11 +8,17 @@ let HelloServise = () =>{
     let [dataCategory,setDataCatgory] = useState([])
     let getData = async ()=>{
         let res = await responseTamplase("/api/rest/homeService/getObject/1",'get')
-        setData(res)
+        if (!!res){
+            setData(res)
+
+        }
     }
     let getDataCategory = async ()=>{
         let res = await responseTamplase("/api/rest/category/getObject",'get')
-        setDataCatgory(res)
+        if (!!res){
+            setDataCatgory(res)
+
+        }
     }
     useEffect(()=>{
         getData()

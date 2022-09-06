@@ -7,7 +7,10 @@ let Credentials = ({showContact}) => {
     let [data,setData] = useState({})
     let getData = async ()=>{
         let res = await responseTamplase("/api/rest/contacts/getObject/1",'get')
-        setData(res)
+        if (!!res){
+            setData(res)
+
+        }
     }
     useEffect(()=>{
         getData()

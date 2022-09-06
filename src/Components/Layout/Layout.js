@@ -20,21 +20,27 @@ let Layout = (props) => {
     const [show, setShow] = useState(false);
     let getCovid = async ()=>{
         let res = await responseTamplase("/api/rest/covid/getObject/1",'get')
-        dispatch({
-            type: 'onchangeCovid',
-            data: res.Show
-        })
-        if (res.Show =="true"){
-            showModal()
+        if (!!res){
+            dispatch({
+                type: 'onchangeCovid',
+                data: res.Show
+            })
+            if (res.Show =="true"){
+                showModal()
 
+            }
         }
+
     }
     let getContact =  async ()=>{
         let res = await responseTamplase("/api/rest/contacts/getObject/1",'get')
-        dispatch({
-            type: 'onchangeContacts',
-            data: res
-        })
+        if (!!res){
+            dispatch({
+                type: 'onchangeContacts',
+                data: res
+            })
+        }
+
     }
     useEffect(()=>{
         getCovid()

@@ -15,57 +15,61 @@ let Footer = () =>{
     let [data,setData] = useState([])
     let getData = async ()=>{
         let res = await responseTamplase("/api/rest/shareLink/getObject",'get')
-        let dataArr = []
-        for (let val of res){
-            if (val.TypeLink ==="facebook"&& val.Show =="true" ){
-                dataArr.push({
-                    url:`https://www.facebook.com/sharer/sharer.php?u=${window.location.hostname}`,
-                    img:facebook,
-                    alt:"facebook"
-                })
-            }
-            if (val.TypeLink ==="twitter"&& val.Show =="true" ){
-                dataArr.push({
-                    url:`https://twitter.com/share?url=${window.location.hostname}`,
-                    img:twitter,
-                    alt:"twitter"
+        if (!!res){
+            let dataArr = []
 
-                })
-            }
-            if (val.TypeLink ==="youtube"&& val.Show =="true" ){
-                dataArr.push({
-                    url:``,
-                    img:youtube,
-                    alt:"youtube"
+            for (let val of res){
+                if (val.TypeLink ==="facebook"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:`https://www.facebook.com/sharer/sharer.php?u=${window.location.hostname}`,
+                        img:facebook,
+                        alt:"facebook"
+                    })
+                }
+                if (val.TypeLink ==="twitter"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:`https://twitter.com/share?url=${window.location.hostname}`,
+                        img:twitter,
+                        alt:"twitter"
 
-                })
-            }
-            if (val.TypeLink ==="email"&& val.Show =="true" ){
-                dataArr.push({
-                    url:`mailto:`,
-                    img:email,
-                    alt:"email"
+                    })
+                }
+                if (val.TypeLink ==="youtube"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:``,
+                        img:youtube,
+                        alt:"youtube"
 
-                })
-            }
-            if (val.TypeLink ==="linkedin"&& val.Show =="true" ){
-                dataArr.push({
-                    url:`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.hostname}`,
-                    img:linkedin,
-                    alt:"linkedin"
+                    })
+                }
+                if (val.TypeLink ==="email"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:`mailto:`,
+                        img:email,
+                        alt:"email"
 
-                })
-            }
-            if (val.TypeLink ==="instagram"&& val.Show =="true" ){
-                dataArr.push({
-                    url:`https://www.instagram.com`,
-                    img:instagram,
-                    alt:"instagram"
+                    })
+                }
+                if (val.TypeLink ==="linkedin"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.hostname}`,
+                        img:linkedin,
+                        alt:"linkedin"
 
-                })
+                    })
+                }
+                if (val.TypeLink ==="instagram"&& val.Show =="true" ){
+                    dataArr.push({
+                        url:`https://www.instagram.com`,
+                        img:instagram,
+                        alt:"instagram"
+
+                    })
+                }
             }
+            setData(dataArr)
         }
-        setData(dataArr)
+
     }
     useEffect(()=>{
         getData()

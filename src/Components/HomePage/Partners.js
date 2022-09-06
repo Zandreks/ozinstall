@@ -8,7 +8,10 @@ let Partner =()=>{
     let [data,setData] = useState([])
     let getData = async ()=>{
         let res = await responseTamplase("/api/rest/partners/getObject",'get')
-        setData(res)
+        if (!!res){
+            setData(res)
+
+        }
     }
     useEffect(()=>{
         getData()
